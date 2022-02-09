@@ -21,36 +21,41 @@ void loop() {
 
   tft.fillScreen(TFT_BLACK);
   tft.setTextSize(2.9);
+  
+  tft.drawString(String("Economy is exchange."), 0, 0);
+
 
   // Draw some randomly generated C-V words
-  for (int i = 0; i < 5; i++)
+  for (int i = 0; i < 3; i++)
   {
     int rx = random(40);
     int ry = random(40);
     int x = rx + random(160 - rx - rx);
-    int y = 20 + 24*i;
+    int y = 32+32*i;
     tft.setTextColor(random(0xFFFF));
 
-    String head = String(con[random(0,21)]);
+    
+    String head = String(con[i]);
     head.toUpperCase();
-    String body;
 
+    String tail = String(con2[i]);
+
+    String body;
     for (int j = 0; j < i+1; j++){
       body += String( vow[ random(0,5) ] );
     }
     
-    String tail = String(con2[random(0,12)]);
     tft.drawString(head + body + tail, x, y, 2);
   }
 
 
-  delay(4000); //break
+  delay(3000); //break
 
   tft.fillScreen(TFT_BLACK);
 
-  stack();
+  //stack();
 
-  tft.fillScreen(TFT_BLACK);
+  //tft.fillScreen(TFT_BLACK);
   
 
 }
