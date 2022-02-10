@@ -1,8 +1,6 @@
 # a poem of EEE
 
-[demo](https://youtu.be/kPq9UTl7eHk)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kPq9UTl7eHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![(https://img.youtube.com/vi/kPq9UTl7eHk/demo.jpg)]](https://youtu.be/kPq9UTl7eHk)
 
 * this is a class project for Creative Embedded System
 
