@@ -7,7 +7,7 @@ TFT_eSPI tft = TFT_eSPI();       // Invoke custom library
 //fixed
 char wordList[10] = "create";
 
-int xspeed = 5;
+int xspeed = 1.5;
 int yspeed = 2;
 
 void setup(void) {
@@ -19,8 +19,10 @@ void setup(void) {
 
 void loop() {
   tft.fillScreen(TFT_BLACK);
-  tft.setTextSize(2.9);
+  tft.setTextSize(2);
   tft.setTextColor(random(0xFFFF));
+
+  tft.drawString(String("Ecology is homeostasis."), 0, 0);
 
 
   // Draw some randomly generated C-V words
@@ -50,34 +52,34 @@ void loop() {
   }
 
     //if hit the bottom, bounce off
-    if (y = 90) {
+    if (y < tft.width()-20) {
       
       tft.fillScreen(TFT_BLACK);
       int count = 0;
       while (count < 10){
         
-        if ((x < 20 || x > 100) || (y > 150 || y < 5)){
+        if ((x < 45 || x > tft.height()-20) || (y > tft.width()-20 || y < 20)){
           xspeed *=(-1);
           yspeed *=(-1);
 
           count++;
         }
 
-        y -= yspeed;
-        x += xspeed;
+        //y -= yspeed;
+        //x += xspeed;
 
         //give letters diff speed
-        tft.drawString(String(wordList[0]), x-20, y, 2);
-        tft.drawString(String(wordList[1]), x-10, y, 2);
-        tft.drawString(String(wordList[2]), x-5, y, 2);
-        tft.drawString(String(wordList[3]), x, y, 2);
-        tft.drawString(String(wordList[4]), x+5, y, 2);
-        tft.drawString(String(wordList[5]), x+10, y, 2);
+        tft.drawString(String(wordList[0]), x+=xspeed + 10, y-= yspeed, 2);
+        tft.drawString(String(wordList[1]), x+=xspeed*1.2 + 5, y-= yspeed, 2);
+        tft.drawString(String(wordList[2]), x+=xspeed*0.2 + 2, y-= yspeed*1.8, 2);
+        tft.drawString(String(wordList[3]), x+=xspeed*1.5, y-= yspeed, 2);
+        tft.drawString(String(wordList[4]), x+=xspeed*0.8 + 2, y-= yspeed*0.2, 2);
+        tft.drawString(String(wordList[5]), x+=xspeed*0.4 + 8, y-= yspeed, 2);
 
-        delay(60);
+        delay(100);
 
         tft.fillScreen(TFT_BLACK);
-        tft.drawString(String("Ecology is balance."), 0, 0);
+        tft.drawString(String("Ecology is homeostasis."), 0, 0);
 
         
       }
