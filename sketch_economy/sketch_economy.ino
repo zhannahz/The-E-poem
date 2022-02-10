@@ -4,11 +4,11 @@
 
 TFT_eSPI tft = TFT_eSPI();       // Invoke custom library
 
-char vow[5] = {'a', 'e', 'i', 'o', 'u'};
+char vow[5] = {'a', 'e', 'i', 'o', 'u'}; //4
 char con[22] = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 
-  'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
-char con2[13] = {'b', 'd', 'g', 'k', 'l', 'm', 'n', 'p', 'r', 't', 'w', 'y'};
-  
+  'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'}; //20
+char con2[13] = {'b', 'd', 'g', 'k', 'l', 'm', 'n', 'p', 'r', 't', 'w', 'y'}; //12
+
 void setup(void) {
   
   tft.init();
@@ -22,12 +22,10 @@ void loop() {
   tft.fillScreen(TFT_BLACK);
   tft.setTextSize(2.9);
   
-  tft.drawString(String("Economy is exchange."), 0, 0);
-
-
   // Draw some randomly generated C-V words
   for (int i = 0; i < 3; i++)
   {
+
     int rx = random(40);
     int ry = random(40);
     int x = rx + random(160 - rx - rx);
@@ -35,28 +33,29 @@ void loop() {
     tft.setTextColor(random(0xFFFF));
 
     
-    String head = String(con[i]);
+    String head = String(con[ random(0, 21) ]);
     head.toUpperCase();
 
-    String tail = String(con2[i]);
+    String tail = String(con2[ random(0, 13) ]);
 
     String body;
-    for (int j = 0; j < i+1; j++){
+    for (int j = i; j >= 0; j--){
       body += String( vow[ random(0,5) ] );
     }
-    
-    tft.drawString(head + body + tail, x, y, 2);
-  }
 
+    if (i == 0)
+       tft.drawString(head + body + tail, x, y, 2);
+
+    if (i == 1)
+      tft.drawString(head + body + tail, x, y, 2);
+      
+    if (i == 2)
+      tft.drawString(head + tail + body + tail, x, y, 2);
+  }
 
   delay(3000); //break
 
   tft.fillScreen(TFT_BLACK);
-
-  //stack();
-
-  //tft.fillScreen(TFT_BLACK);
-  
 
 }
 
