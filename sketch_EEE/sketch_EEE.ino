@@ -11,48 +11,69 @@ char con2[13] = {'b', 'd', 'g', 'k', 'l', 'm', 'n', 'p', 'r', 't', 'w', 'y'};
   
 
 void setup() {
-  // put your setup code here, to run once:
 
   tft.init();
   tft.setRotation(1);
+  tft.fillScreen(TFT_BLACK);
+
 
 }
 
 void loop() {
   tft.fillScreen(TFT_BLACK);
-
-  // engine
   tft.setTextSize(2);
   tft.setTextColor(random(0xFFFF));
-  tft.drawString(String("Ecology is homeostasis."), 0, tft.width()/2);
   
-  while(){
+  // chapter: engine
+  tft.drawString(String("ENGINE AS SCALING."), 0, 0);
+  
+  delay(6000); //break
+  tft.fillScreen(TFT_BLACK);
+
+  int count = 300;
+  while (count > 0){
     stack();
+    count--;
   }
+  tft.resetViewport();
+
+  tft.fillScreen(TFT_BLACK);
+
+  // chapter: economy
+  tft.drawString(String("ECONOMY AS EXCHANGING."), 0, 0);
+  
+
+  
+  delay(6000); //break
+  tft.fillScreen(TFT_BLACK);
+
+
+  // chapter: ecology
+  
+  tft.drawString(String("ECOLOGY AS BALANCING."), 0, 0);
+  tft.fillScreen(TFT_BLACK);
+
   delay(3000); //break
 
-  // economy
 
 }
 
 //stack() and plotbox() function for engine
-void stack(void)
+void stack()
 {
-  for (int i = 0; i < 500; i++)
-  {
-    tft.resetViewport(); 
+  tft.resetViewport();
+  
+  uint16_t w = 40;
+  uint16_t h = 40;
+  uint16_t x = random(tft.width() - w);
+  uint16_t y = random(tft.height() - h);
 
-    uint16_t w = 40;
-    uint16_t h = 40;
-    uint16_t x = random(tft.width());
-    uint16_t y = random(tft.height());
+  tft.setViewport(x, y, w, h);
 
-    tft.setViewport(x, y, w, h);
+  plotBox();
 
-    plotBox();
+  delay(10);
 
-    delay(10);
-  }
 }
 
 void plotBox(void)
@@ -64,6 +85,6 @@ void plotBox(void)
   tft.drawRect(0,0, 40,40, TFT_WHITE);
   tft.setTextDatum(MC_DATUM);
   tft.setTextColor(TFT_WHITE);
-  String any = String(con[random(0,8)]);
+  String any = String(con[random(0,21)]);
   tft.drawString(any, 20, 20, 1);  
 }
