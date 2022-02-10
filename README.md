@@ -1,6 +1,6 @@
 # a poem of EEE
 
-[![(https://img.youtube.com/vi/kPq9UTl7eHk/demo.jpg)]](https://youtu.be/kPq9UTl7eHk)
+[a demo video | YouTube](https://youtu.be/kPq9UTl7eHk)
 
 * this is a class project for Creative Embedded System
 
