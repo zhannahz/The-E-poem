@@ -4,9 +4,6 @@
 
 * this is a class project for Creative Embedded System
 
-* note that while many files are included in the repo, only `sketch_EEE` is uploaded to ESP32.
-
-
 E3 stands for
 - Engine
 - Economy
