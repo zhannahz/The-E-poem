@@ -1,13 +1,27 @@
-# a poem of EEE
+# Engine(), Economy(), Ecology()
 
 [a demo video | YouTube](https://youtu.be/kPq9UTl7eHk)
 
 * this is a class project for Creative Embedded System
 
-E3 stands for
-- Engine
-- Economy
-- Ecology
 
-The plan was to appropriate E3 from the framework provided by *Advanced Game Design* to classify three different patterns of information activites, despite poorly executed. 
-This is not so much a piece of digitized poem, or electrically-implemented animated text, as a specific way of modulating text. This work is produced with the recognition of cybertext as both content and form, specifically with in mind the progressive literature (or perhaps cybernetic) club OuLiPo.
+## Info
+name
+Engine(), Economy(), Ecology()
+year
+2022
+dimensions
+18 x 25.5 x 3.1 (screen)
+support
+Mark Santolucito and Eliana Shapere
+
+## Medium 
+ESP32 TTGO, 3.7V (500mAh) battery, a piece of paper envelop, a wood plank, a string of black yarn
+
+## Software and others
+Arduino
+libraries used include: TFT_eSPI
+
+## A more detailed documentation
+see:
+https://hannahz.vercel.app/creative-embarassed-system
